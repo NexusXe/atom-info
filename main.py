@@ -26,7 +26,7 @@ for i in element_list:
     if eih.group.name == "Noble gases":
         print('Noble Gas Conf: N/A')
     else:
-        print(f'Noble Gas Conf: [{eih.ec.get_largest_core()[0]}] {str(eih.ec).replace(str(eih.ec.get_largest_core()[1]), "")} ') # TODO: order correctly
+        print(f'Noble Gas Conf: [{eih.ec.get_largest_core()[0]}] {str(eih.ec).replace(str(eih.ec.get_largest_core()[1]), "")} ')
 
     get_group(eih)
     
@@ -34,12 +34,12 @@ for i in element_list:
 
     print(f'Block: {eih.block}')
 
-    if eih.series not in ("Alkali metals", "Alkaline earth metals", "Transition Metals", "Metalloids"):
-        metal_status = "Nonmetal"
-    elif eih.series == "Metalloids":
-        metal_status = "Metalloid"
-    else:
-        metal_status = "Metal"
+    if eih.series not in ("Alkali metals", "Alkali earth metals", "Transition Metals", "Metalloids"):
+        metal_status = "Metalloid" if eih.series == "Metalloids" else "Metals" if eih.series == "Metals" else "Nonmetal"
+#    elif eih.series == "Metalloids":
+#        metal_status = "Metalloid"
+#    else:
+#        metal_status = "Metal"
     print(f'Metal Status: {metal_status}')
 
     x += 1
