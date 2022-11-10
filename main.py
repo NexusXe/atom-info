@@ -26,7 +26,7 @@ for i in element_list:
     if eih.group.name == "Noble gases":
         print('Noble Gas Conf: N/A')
     else:
-        print(f'Noble Gas Conf: [{eih.ec.get_largest_core()[0]}] {str(eih.ec).replace(str(eih.ec.get_largest_core()[1]), "")} ')
+        print(f'Noble Gas Conf: [{eih.ec.get_largest_core()[0]}] {str(eih.ec).replace(str(eih.ec.get_largest_core()[1]), "")} ') # TODO: order correctly
 
     get_group(eih)
     
